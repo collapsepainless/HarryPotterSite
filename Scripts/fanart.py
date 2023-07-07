@@ -6,7 +6,9 @@ app = Flask(__name__)
 UPLOAD_FOLDER = 'ASH\'N\'DANNY\'S\'SITE/fan_art_uploads'  # Folder where uploaded images will be stored
 ALLOWED_EXTENSIONS = {'png', 'jpg', 'jpeg', 'gif'}  # Allowed file extensions
 
+#assigns the path of the folder where the uploaded images will be stored
 app.config['UPLOAD_FOLDER'] = UPLOAD_FOLDER
+
 
 @app.route('/')
 def index():
@@ -34,4 +36,4 @@ def allowed_file(filename):
            filename.rsplit('.', 1)[1].lower() in ALLOWED_EXTENSIONS
 
 if __name__ == '__main__':
-    app.run(debug=True)
+    app.run(debug=True, host='0.0.0.0', port=55000)
